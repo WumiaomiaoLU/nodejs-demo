@@ -10,6 +10,8 @@ function Dog(name) {
   this.name = name;
 
   var timer = setInterval(function() {
+    //console.log('self:', self);
+    //console.log('this:', this);
     self.emit('bark');
   }, 1000);
 
