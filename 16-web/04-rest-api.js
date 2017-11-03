@@ -46,10 +46,9 @@ function insert(req, res) {
   req.on('data', function(data) { item += data; });
   req.on('end', function() {
     items.push(item);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.end('Insert OK!');
   });
-
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.end('Insert OK!');
 }
 
 function del(req, res) {
